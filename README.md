@@ -1,2 +1,1 @@
-# java-extravaganze
-Me learning Java
+# Me Learning Java

@@ -20,6 +20,8 @@ public class Main {
         System.out.println("---");
         tree.bfs(8);
         System.out.println("---");
-        tree.dfs(8);                
+        tree.dfs(8);
+        System.out.println("---");
+        tree.dfsIterative(8);                    
     }
 }

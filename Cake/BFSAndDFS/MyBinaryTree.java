@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -91,6 +93,32 @@ public class MyBinaryTree {
             dfs(node.left, number);
             dfs(node.right, number);
         }
+    }
+
+    public void dfsIterative(int number) {
+        dfs(head, number);
+    }
+
+    public void dfsIterative(Node node, int number) {
+        Deque<Node> nodeStack = new ArrayDeque<>();
+        if(node.left != null)
+            nodeStack.push(node.left);
+        if(node.right != null)
+            nodeStack.push(node.right);
+
+        while(!nodeStack.isEmpty()) {
+            Node temp = nodeStack.pop();
+            if(temp.data == number) {
+                System.out.println("Found the number: " + number);
+                return;
+            }
+            System.out.println(node.data);
+            if(temp.left != null)
+                nodeStack.push(temp.left);
+            if(temp.right != null)
+                nodeStack.push(temp.right);
+        }
+        System.out.println("Could not find the number: " + number);
     }
 
     public void inorder() {
